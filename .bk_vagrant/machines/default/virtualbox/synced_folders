@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/alexeyfrank/projects/cluster/docker_hello","disabled":false},"/projects":{"guestpath":"/projects","hostpath":"/Users/alexeyfrank/projects","disabled":false}}}

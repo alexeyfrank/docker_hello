@@ -1,0 +1,27 @@
+
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: set locale
+      locale_gen: name=en_US.UTF-8 state=present
+
+    - name: install apt packages
+      sudo: yes
+      apt: name={{ item }} state=present update_cache=yes
+      with_items:
+        - locales
+        - build-essential
+        - language-pack-en
+        - git
+        - curl
+        - htop
+        # - libxml2-dev
+        # - libxslt-dev
+
+    - name: Setup docker
+      action: shell curl -sSL https://get.docker.io/ubuntu/ | sudo sh
+
+    - name: update apt
+      apt: update_cache=yes
+
